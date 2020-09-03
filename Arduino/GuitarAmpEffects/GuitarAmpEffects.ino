@@ -82,7 +82,7 @@ void MyCallback(float **in, float **out, size_t size)
             if (bitRead(Mode_Bits, 2) == 1)
             {   // ==================== Delayline ========================
                 // No Echo if depth is turned all the way down
-                if (feedback_adj != 0)
+                if (feedback_adj <= 0.01)
                 {
                     // Read Wet from Delay Line
                     wet = del.Read();
